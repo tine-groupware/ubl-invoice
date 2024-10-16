@@ -1,0 +1,32 @@
+{
+    "name": "tine-groupware/ubl-invoice",
+    "type": "library",
+    "license": [
+        "BSD-3-Clause"
+    ],
+    "authors": [
+        {
+            "name": "Paul Mehrer",
+            "email": "p.mehrer@metaways.de"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/tine-groupware/ubl-common.git"
+        }
+    ],
+    "require": {
+        "goetas-webservices/xsd2php": "dev-master",
+        "goetas-webservices/xsd2php-runtime": "^0.2.17",
+        "tine-groupware/ubl-common": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "UBL21\\Invoice\\": "src/php/Invoice/"
+        }
+    },
+    "scripts": {
+        "xsd2php": "docker build -t ubl-common:1 -f ./docker/Dockerfile ./docker; docker run -u `id -u`:`id -g` --rm -v ./:/ubl ubl-common:1 ash -c 'cd /ubl; ./vendor/bin/xsd2php convert ./xsd2phpConf.yml ./xsd/UBL-Invoice-2.1.xsd'"
+    }
+}

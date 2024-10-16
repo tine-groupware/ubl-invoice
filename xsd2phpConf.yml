@@ -1,0 +1,20 @@
+xsd2php:
+  namespaces:
+    'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2': 'UBL21\Invoice'
+    'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2': 'UBL21\Common\CommonExtensionComponents'
+    'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2': 'UBL21\Common\CommonBasicComponents'
+    'urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2': 'UBL21\Common\UnqualifiedDataTypes'
+    'urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2': 'UBL21\Common\CoreComponentTypeSchemaModule'
+    'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2': 'UBL21\Common\CommonAggregateComponents'
+    'urn:oasis:names:specification:ubl:schema:xsd:CommonSignatureComponents-2': 'UBL21\Common\CommonSignatureComponents'
+    'urn:oasis:names:specification:ubl:schema:xsd:SignatureAggregateComponents-2': 'UBL21\Common\SignatureAggregateComponents'
+    'urn:oasis:names:specification:ubl:schema:xsd:SignatureBasicComponents-2': 'UBL21\Common\SignatureBasicComponents'
+    'http://www.w3.org/2000/09/xmldsig#': 'UBL21\Common\Xmldsig'
+    'http://uri.etsi.org/01903/v1.3.2#': 'UBL21\Common\UriEtsi\V132'
+    'http://uri.etsi.org/01903/v1.4.1#': 'UBL21\Common\UriEtsi\V141'
+  destinations_php:
+    'UBL21\Invoice': src/php/Invoice
+    'UBL21\Common': vendor/tine-groupware/ubl-common/src/php/Common
+  destinations_jms:
+    'UBL21\Invoice': src/jms
+    'UBL21\Common': vendor/tine-groupware/ubl-common/src/jms
