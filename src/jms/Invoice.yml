@@ -1,3 +1,6 @@
 UBL21\Invoice\Invoice:
     xml_root_name: Invoice
     xml_root_namespace: 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2'
+    xml_namespaces:
+        cbc: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
+        cac: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'
