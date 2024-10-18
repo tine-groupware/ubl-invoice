@@ -17,9 +17,11 @@
         }
     ],
     "require": {
+        "tine-groupware/ubl-common": "0.1.2"
+    },
+    "require-dev": {
         "goetas-webservices/xsd2php": "dev-master",
-        "goetas-webservices/xsd2php-runtime": "^0.2.17",
-        "tine-groupware/ubl-common": "dev-main"
+        "goetas-webservices/xsd2php-runtime": "^0.2.17"
     },
     "autoload": {
         "psr-4": {

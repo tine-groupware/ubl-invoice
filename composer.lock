@@ -4,8 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e524815dd03804d9fbcdaf637749d62",
+    "content-hash": "680054e356859567277342387d787282",
     "packages": [
+        {
+            "name": "tine-groupware/ubl-common",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tine-groupware/ubl-common.git",
+                "reference": "b0ad70f52796c5d9a0fd239968ff6038ce4266f3"
+            },
+            "require-dev": {
+                "goetas-webservices/xsd2php": "dev-master",
+                "goetas-webservices/xsd2php-runtime": "^0.2.17"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "UBL21\\Common\\": "src/php/Common/"
+                }
+            },
+            "scripts": {
+                "xsd2php": [
+                    "docker build -t ubl-common:1 -f ./docker/Dockerfile ./docker; docker run -u `id -u`:`id -g` --rm -v ./:/ubl ubl-common:1 ash -c 'cd /ubl; ./vendor/bin/xsd2php convert ./xsd2phpConf.yml ./xsd/main.xsd'"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Mehrer",
+                    "email": "p.mehrer@metaways.de"
+                }
+            ],
+            "time": "2024-10-18T12:01:10+00:00"
+        }
+    ],
+    "packages-dev": [
         {
             "name": "doctrine/inflector",
             "version": "2.0.10",
@@ -1853,49 +1889,12 @@
                 }
             ],
             "time": "2024-09-17T12:49:58+00:00"
-        },
-        {
-            "name": "tine-groupware/ubl-common",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tine-groupware/ubl-common.git",
-                "reference": "dec0ac43bf4159d5e964a78c2a41b8f447cda40f"
-            },
-            "require": {
-                "goetas-webservices/xsd2php": "dev-master",
-                "goetas-webservices/xsd2php-runtime": "^0.2.17"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "UBL21\\Common\\": "src/php/Common/"
-                }
-            },
-            "scripts": {
-                "xsd2php": [
-                    "docker build -t ubl-common:1 -f ./docker/Dockerfile ./docker; docker run -u `id -u`:`id -g` --rm -v ./:/ubl ubl-common:1 ash -c 'cd /ubl; ./vendor/bin/xsd2php convert ./xsd2phpConf.yml ./xsd/main.xsd'"
-                ]
-            },
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Paul Mehrer",
-                    "email": "p.mehrer@metaways.de"
-                }
-            ],
-            "time": "2024-10-16T16:09:27+00:00"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "goetas-webservices/xsd2php": 20,
-        "tine-groupware/ubl-common": 20
+        "goetas-webservices/xsd2php": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
