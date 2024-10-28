@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "tine-groupware/ubl-common": "0.1.2"
+        "tine-groupware/ubl-common": "0.1.3"
     },
     "require-dev": {
         "goetas-webservices/xsd2php": "dev-master",
